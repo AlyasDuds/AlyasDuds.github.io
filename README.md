@@ -9,9 +9,9 @@ systems that manage legal records, company assets, and postal office profiles.
 
 | Project | Description | Status |
 |---|---|---|
-| [Legal Case Management System](https://github.com/AlyasDuds/legal-case-management) | Tracks clients, cases, hearings, deadlines, documents and billing | 🔨 In Development |
-| [Inventory Asset Management System](https://github.com/AlyasDuds/inventory-asset-management) | Tracks assets, locations, custody, maintenance and stock levels | 🔨 In Development |
-| [Postal Profile System](https://github.com/AlyasDuds/postal-profile-system) | Manages postal office profiles, connectivity stats, and quarterly reports across 9 areas nationwide | 🟢 80% Complete |
+| Legal Case Management System | Tracks clients, cases, hearings, deadlines, documents and billing | 🔨 In Development |
+| Inventory Asset Management System | Tracks assets, locations, custody, maintenance and stock levels | 🔨 In Development |
+| Postal Profile System | Manages postal office profiles, connectivity stats, and quarterly reports across 9 areas nationwide | 🟢 80% Complete |
 
 > 🚀 **Postal Profile System** is nearly finished — core features (dashboard, reports, user roles, approval workflow, Excel/PDF export) are fully working. Final polish in progress.
 
@@ -42,8 +42,9 @@ systems that manage legal records, company assets, and postal office profiles.
 ## 📫 Contact
 
 - 📧 Email: [danmartin172629@gmail.com](mailto:danmartin172629@gmail.com)
-- 🌐 Portfolio: [AlyasDuds.github.io/portfolio](https://AlyasDuds.github.io/portfolio/)
+- 🌐 Portfolio: [AlyasDuds.github.io](https://AlyasDuds.github.io)
 
 ---
 
 <sub>Building systems one feature at a time. 🚀</sub>
+
