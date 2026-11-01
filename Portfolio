@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dann Mykell Martin | Systems Developer</title>
+<meta name="description" content="Portfolio of Dann Mykell Martin — developer of legal case, inventory asset, and postal profile systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f5f8;--surface:#fff;--ink:#14233b;--muted:#566377;
+  --line:#d3dae3;--accent:#0f6b63;--accent-ink:#fff;--warn:#9a5b00;
+  --serif:"Newsreader",Georgia,serif;--sans:"IBM Plex Sans",system-ui,sans-serif
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#0e1623;--surface:#16212f;--ink:#e8edf4;--muted:#9aa8bb;
+  --line:#2a3a4f;--accent:#4fc3b5;--accent-ink:#0e1623;--warn:#e0a84a
+}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--sans)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+
+/* ── Header ── */
+header.top{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;border-bottom:1px solid var(--line)}
+header.top strong{font:600 1.25rem var(--serif)}
+nav a{margin-left:1.5rem;text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+/* ── Hero ── */
+.hero{padding:4.5rem 0 3.5rem;display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center}
+h1{font:600 clamp(2.4rem,5vw,3.6rem)/1.08 var(--serif);margin:0 0 1.25rem;letter-spacing:-.01em}
+.hero p{color:var(--muted);max-width:34rem;margin:0 0 1.75rem}
+.btn{display:inline-block;padding:.7rem 1.3rem;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:500;border-radius:4px;margin-right:.75rem;transition:opacity .15s}
+.btn:hover{opacity:.85}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+
+/* ── Status board ── */
+.board{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.board h2{margin:0;padding:.8rem 1rem;font:500 .9rem var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.85rem 1rem;border-bottom:1px solid var(--line);font-size:.97rem}
+.row:last-child{border-bottom:0}
+.badge{font-size:.78rem;font-weight:600;letter-spacing:.03em;padding:.25rem .65rem;border-radius:20px;white-space:nowrap;background:rgba(154,91,0,.1);color:var(--warn)}
+
+/* ── Sections ── */
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+h2.sec{font:600 2rem var(--serif);margin:0 0 .5rem}
+.lead{color:var(--muted);margin:0 0 2rem;max-width:40rem}
+
+/* ── Projects ── */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1.5rem}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.75rem;display:flex;flex-direction:column;gap:.5rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.proj h3{font:600 1.45rem var(--serif);margin:0}
+.proj .status{color:var(--warn);font-weight:600;font-size:.88rem;letter-spacing:.02em;text-transform:uppercase;margin:0}
+.proj p.desc{margin:0;color:var(--muted)}
+.proj ul{padding-left:1.1rem;margin:.25rem 0 0;color:var(--muted)}
+.proj li{margin-bottom:.3rem;font-size:.97rem}
+.stack{margin:.75rem 0 0;padding:.6rem .9rem;background:var(--bg);border-radius:4px;font-size:.88rem;color:var(--muted);border:1px solid var(--line)}
+.stack strong{color:var(--ink)}
+.proj-links{margin-top:auto;padding-top:.75rem;display:flex;gap:1rem;font-size:.95rem}
+.proj-links a{font-weight:500;text-decoration:none;color:var(--accent)}
+.proj-links a:hover{text-decoration:underline}
+
+/* ── Skills ── */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.skill-card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.25rem 1.5rem}
+.skill-card h3{font:600 1.1rem var(--serif);margin:0 0 .5rem}
+.skill-card p{margin:0;color:var(--muted);font-size:.95rem}
+.pill-group{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem}
+.pill{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:.2rem .7rem;font-size:.82rem;color:var(--muted)}
+
+/* ── Contact ── */
+.contact-row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+
+/* ── Footer ── */
+footer{padding:2.5rem 0;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+
+@media(max-width:760px){
+  .hero,.projects,.skills{grid-template-columns:1fr}
+  nav a{margin-left:1rem}
+  .hero{padding-top:2.5rem}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <strong>Dann Mykell Martin</strong>
+  <nav aria-label="Main">
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <div>
+    <h1>Building systems that manage legal records, company assets, and postal operations.</h1>
+    <p>I develop full-stack web applications for government and business operations — from tracking court cases and company assets to managing postal office profiles nationwide.</p>
+    <a class="btn" href="#projects">View projects</a>
+    <a class="btn alt" href="#contact">Get in touch</a>
+  </div>
+  <div class="board" aria-label="Current projects status">
+    <h2>Currently Building</h2>
+    <div class="row">
+      <span>Legal Case Management System</span>
+      <span class="badge">In Progress</span>
+    </div>
+    <div class="row">
+      <span>Inventory Asset Management System</span>
+      <span class="badge">In Progress</span>
+    </div>
+    <div class="row">
+      <span>Postal Profile System</span>
+      <span class="badge" style="background:rgba(15,107,99,.12);color:var(--accent);">80% Complete</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Projects ── -->
+<section id="projects">
+  <h2 class="sec">Projects</h2>
+  <p class="lead">Three systems in active development — each solving a real operational problem.</p>
+  <div class="projects">
+
+    <article class="proj">
+      <h3>Legal Case Management System</h3>
+      <p class="status">&#9679; Ongoing Development</p>
+      <p class="desc">Helps a legal team track every case from intake to closing — no hearing or deadline gets missed.</p>
+      <ul>
+        <li>Client and case records with status tracking</li>
+        <li>Hearing calendar and deadline reminders</li>
+        <li>Document storage linked to each case</li>
+        <li>Billing and time entries per case</li>
+        <li>Role-based access (admin, lawyer, staff)</li>
+      </ul>
+      <div class="proj-links">
+        <a href="https://github.com/AlyasDuds/legal-case-management">&#8599; Repository</a>
+      </div>
+    </article>
+
+    <article class="proj">
+      <h3>Inventory Asset Management System</h3>
+      <p class="status">&#9679; Ongoing Development</p>
+      <p class="desc">Records what a company owns, where each item is, who holds it, and what condition it is in.</p>
+      <ul>
+        <li>Asset register with tags and barcodes</li>
+        <li>Check-in, check-out and transfer history</li>
+        <li>Maintenance schedules and depreciation</li>
+        <li>Stock levels with low-stock alerts</li>
+        <li>Printable reports and audit trail</li>
+      </ul>
+      <div class="proj-links">
+        <a href="https://github.com/AlyasDuds/inventory-asset-management">&#8599; Repository</a>
+      </div>
+    </article>
+
+    <article class="proj">
+      <h3>Postal Profile System</h3>
+      <p class="status" style="color:var(--accent);">&#9679; 80% Complete — Near Finish</p>
+      <!-- Progress bar -->
+      <div style="background:var(--line);border-radius:20px;height:7px;margin:.25rem 0 .5rem;overflow:hidden">
+        <div style="width:80%;height:100%;background:var(--accent);border-radius:20px;"></div>
+      </div>
+      <p class="desc">A nationwide postal office management platform — tracking connectivity, personnel, and office profiles across all areas.</p>
+      <ul>
+        <li>Office profiles per area with connectivity status</li>
+        <li>Dashboard with live stats cards and charts</li>
+        <li>Quarterly connectivity reports with PDF &amp; Excel export</li>
+        <li>Role-based access across 9 postal areas</li>
+        <li>Approval workflow and archive system</li>
+      </ul>
+      <div class="stack"><strong>Stack:</strong> Java Spring Boot · Thymeleaf · PostgreSQL · Bootstrap · WebSocket</div>
+      <div class="proj-links">
+        <a href="https://github.com/AlyasDuds/postal-profile-system">&#8599; Repository</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ── Skills ── -->
+<section id="skills">
+  <h2 class="sec">Skills</h2>
+  <p class="lead">Tools and technologies I use to build production-ready systems.</p>
+  <div class="skills">
+
+    <div class="skill-card">
+      <h3>Backend</h3>
+      <p>Server-side logic, APIs, security, and business rules.</p>
+      <div class="pill-group">
+        <span class="pill">Java</span>
+        <span class="pill">Spring Boot</span>
+        <span class="pill">Spring Security</span>
+        <span class="pill">Spring Data JPA</span>
+        <span class="pill">Hibernate</span>
+        <span class="pill">REST API</span>
+        <span class="pill">WebSocket</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h3>Frontend</h3>
+      <p>Dashboards, forms, reports, and responsive UI.</p>
+      <div class="pill-group">
+        <span class="pill">Thymeleaf</span>
+        <span class="pill">Bootstrap 4</span>
+        <span class="pill">JavaScript</span>
+        <span class="pill">Chart.js</span>
+        <span class="pill">HTML/CSS</span>
+        <span class="pill">DataTables</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h3>Database &amp; DevOps</h3>
+      <p>Data management, exports, and deployment.</p>
+      <div class="pill-group">
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">MySQL</span>
+        <span class="pill">Apache POI (Excel)</span>
+        <span class="pill">iText PDF</span>
+        <span class="pill">Git</span>
+        <span class="pill">Maven</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<section id="contact">
+  <h2 class="sec">Contact</h2>
+  <p class="lead">Open to freelance, collaboration, or full-time opportunities. Send me a message.</p>
+  <div class="contact-row">
+    <a class="btn" href="mailto:danmartin172629@gmail.com">danmartin172629@gmail.com</a>
+    <a class="btn alt" href="https://github.com/AlyasDuds">GitHub Profile</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  &copy; 2026 Dann Mykell Martin &mdash; Systems Developer
+</footer>
+
+</div>
+</body>
+</html>
