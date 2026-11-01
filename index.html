@@ -65,6 +65,21 @@ h2.sec{font:600 2rem var(--serif);margin:0 0 .5rem}
 .proj-links a{font-weight:500;text-decoration:none;color:var(--accent)}
 .proj-links a:hover{text-decoration:underline}
 
+
+/* ── Viewer ── */
+.viewbtn{background:none;border:0;padding:0;font:500 .95rem var(--sans);color:var(--accent);cursor:pointer}
+.viewbtn:hover{text-decoration:underline}
+dialog{width:min(60rem,94vw);max-height:92vh;overflow:auto;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:1.5rem}
+dialog::backdrop{background:rgba(0,0,0,.75)}
+.vhead{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1rem}
+.vhead h2{font:600 1.5rem var(--serif);margin:0}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem}
+.gallery figure{margin:0;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.gallery img{display:block;width:100%;height:auto}
+.gallery figcaption{padding:.5rem .8rem;font-size:.9rem;color:var(--muted)}
+.video{margin-top:1.25rem;aspect-ratio:16/9}
+.video iframe{width:100%;height:100%;border:1px solid var(--line);border-radius:6px}
+
 /* ── Skills ── */
 .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .skill-card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.25rem 1.5rem}
@@ -142,9 +157,7 @@ footer{padding:2.5rem 0;border-top:1px solid var(--line);color:var(--muted);font
         <li>Billing and time entries per case</li>
         <li>Role-based access (admin, lawyer, staff)</li>
       </ul>
-      <div class="proj-links">
-        <a href="https://github.com/AlyasDuds/legal-case-management">&#8599; Repository</a>
-      </div>
+      <div class="proj-links"><button class="viewbtn" data-project="legal">View UI screenshots &amp; video</button></div>
     </article>
 
     <article class="proj">
@@ -158,9 +171,7 @@ footer{padding:2.5rem 0;border-top:1px solid var(--line);color:var(--muted);font
         <li>Stock levels with low-stock alerts</li>
         <li>Printable reports and audit trail</li>
       </ul>
-      <div class="proj-links">
-        <a href="https://github.com/AlyasDuds/inventory-asset-management">&#8599; Repository</a>
-      </div>
+      <div class="proj-links"><button class="viewbtn" data-project="inventory">View UI screenshots &amp; video</button></div>
     </article>
 
     <article class="proj">
@@ -179,13 +190,56 @@ footer{padding:2.5rem 0;border-top:1px solid var(--line);color:var(--muted);font
         <li>Approval workflow and archive system</li>
       </ul>
       <div class="stack"><strong>Stack:</strong> Java Spring Boot · Thymeleaf · PostgreSQL · Bootstrap · WebSocket</div>
-      <div class="proj-links">
-        <a href="https://github.com/AlyasDuds/postal-profile-system">&#8599; Repository</a>
-      </div>
+      <div class="proj-links"><button class="viewbtn" data-project="postal">View UI screenshots &amp; video</button></div>
     </article>
 
   </div>
 </section>
+
+<dialog id="viewer" aria-labelledby="vtitle">
+  <div class="vhead"><h2 id="vtitle"></h2><button id="vclose" class="viewbtn">Close</button></div>
+  <div class="gallery" id="vgallery"></div>
+  <div class="video" id="vvideo" hidden></div>
+  <p class="lead" id="vempty" hidden>Screenshots and video are coming soon.</p>
+</dialog>
+<script>
+// Edit this list. Put images in the "images" folder. Paste the YouTube video ID (the part after v=) or leave "".
+var PROJECTS = {
+  legal:     {title: "Legal Case Management System",     video: "", images: [["images/legal-1.png","Dashboard"],["images/legal-2.png","Case list"],["images/legal-3.png","Hearing calendar"],["images/legal-4.png","Case details"]]},
+  inventory: {title: "Inventory Asset Management System", video: "", images: [["images/inventory-1.png","Dashboard"],["images/inventory-2.png","Asset register"],["images/inventory-3.png","Transfers"],["images/inventory-4.png","Reports"]]},
+  postal:    {title: "Postal Profile System",             video: "", images: [["images/pps-1.png","Dashboard"],["images/pps-2.png","Office profiles"],["images/pps-3.png","Quarterly report"],["images/pps-4.png","Approval workflow"]]}
+};
+var dlg = document.getElementById("viewer"), gal = document.getElementById("vgallery"),
+    vid = document.getElementById("vvideo"), empty = document.getElementById("vempty");
+function openProject(key) {
+  var d = PROJECTS[key], shown = 0, pending = d.images.length;
+  document.getElementById("vtitle").textContent = d.title;
+  gal.innerHTML = ""; vid.innerHTML = ""; vid.hidden = true; empty.hidden = true;
+  function done() { if (--pending === 0 && !shown && !d.video) empty.hidden = false; }
+  d.images.forEach(function (it) {
+    var img = new Image();
+    img.alt = d.title + ": " + it[1];
+    img.onload = function () {
+      var f = document.createElement("figure"), a = document.createElement("a"), c = document.createElement("figcaption");
+      a.href = it[0]; a.target = "_blank"; a.rel = "noopener"; a.appendChild(img);
+      c.textContent = it[1]; f.appendChild(a); f.appendChild(c); gal.appendChild(f); shown++; done();
+    };
+    img.onerror = done;
+    img.src = it[0];
+  });
+  if (d.video) {
+    vid.hidden = false;
+    vid.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + d.video + '" title="' + d.title + ' demo" allowfullscreen loading="lazy"></iframe>';
+  }
+  dlg.showModal();
+}
+document.querySelectorAll(".viewbtn[data-project]").forEach(function (b) {
+  b.addEventListener("click", function () { openProject(b.dataset.project); });
+});
+document.getElementById("vclose").addEventListener("click", function () { dlg.close(); vid.innerHTML = ""; });
+dlg.addEventListener("close", function () { vid.innerHTML = ""; });
+dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+</script>
 
 <!-- ── Skills ── -->
 <section id="skills">
