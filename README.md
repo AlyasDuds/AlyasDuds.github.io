@@ -2,6 +2,8 @@
 
 Personal portfolio of **Dann Mykell Martin**, systems developer building web applications for legal records, company assets, and postal operations.
 
+**Live site:** [alyasduds.github.io](https://alyasduds.github.io/)
+
 ## Projects
 
 | Project | Status | Highlights |
@@ -53,7 +55,7 @@ python3 -m http.server 8000
 1. Push `index.html` and the media files to the repository root.
 2. Go to **Settings → Pages**.
 3. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
-4. The site will be live at `https://<username>.github.io/<repository>/`.
+4. Because this repository is named `AlyasDuds.github.io`, the site is live at `https://alyasduds.github.io/`.
 
 ## Contact
 
