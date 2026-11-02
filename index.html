@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%93%AE%3C/text%3E%3C/svg%3E">
 <title>Dann Mykell Martin | Systems Developer</title>
 <meta name="description" content="Portfolio of Dann Mykell Martin — developer of legal case, inventory asset, and postal profile systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,6 +60,10 @@ h2.sec{font:600 2rem var(--serif);margin:0 0 .5rem}
 .proj p.desc{margin:0;color:var(--muted)}
 .proj ul{padding-left:1.1rem;margin:.25rem 0 0;color:var(--muted)}
 .proj li{margin-bottom:.3rem;font-size:.97rem}
+.team{margin:.75rem 0 0;padding:.6rem .9rem;background:var(--bg);border-radius:4px;font-size:.88rem;color:var(--muted);border:1px solid var(--line)}
+.team strong{color:var(--ink)}
+.team a{color:var(--accent);font-weight:500;text-decoration:none}
+.team a:hover{text-decoration:underline}
 .stack{margin:.75rem 0 0;padding:.6rem .9rem;background:var(--bg);border-radius:4px;font-size:.88rem;color:var(--muted);border:1px solid var(--line)}
 .stack strong{color:var(--ink)}
 .proj-links{margin-top:auto;padding-top:.75rem;display:flex;gap:1rem;font-size:.95rem}
@@ -84,7 +89,7 @@ dialog::backdrop{background:rgba(0,0,0,.75)}
 .video iframe{width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:6px}
 
 /* ── Skills ── */
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
 .skill-card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1.25rem 1.5rem}
 .skill-card h3{font:600 1.1rem var(--serif);margin:0 0 .5rem}
 .skill-card p{margin:0;color:var(--muted);font-size:.95rem}
@@ -160,6 +165,12 @@ footer{padding:2.5rem 0;border-top:1px solid var(--line);color:var(--muted);font
         <li>Billing and time entries per case</li>
         <li>Role-based access (admin, lawyer, staff)</li>
       </ul>
+      <!-- Team: pwedeng palitan ang GitHub usernames ng totoong pangalan -->
+      <div class="team"><strong>Team project</strong> &mdash; built with a dev team:
+        <a href="https://github.com/phlpostjosh" target="_blank" rel="noopener">phlpostjosh</a> (Senior Developer) &middot;
+        <a href="https://github.com/ShirouOne2" target="_blank" rel="noopener">ShirouOne2</a> &middot;
+        <a href="https://github.com/rlphstps" target="_blank" rel="noopener">rlphstps</a>
+      </div>
       <div class="proj-links"><button class="viewbtn" data-project="legal">View UI screenshots &amp; video</button></div>
     </article>
 
@@ -294,6 +305,16 @@ dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); 
         <span class="pill">iText PDF</span>
         <span class="pill">Git</span>
         <span class="pill">Maven</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h3>Other Languages (Basic)</h3>
+      <p>Working knowledge of fundamentals beyond my main Java stack.</p>
+      <div class="pill-group">
+        <span class="pill">PHP</span>
+        <span class="pill">C#</span>
+        <span class="pill">C++</span>
       </div>
     </div>
 
