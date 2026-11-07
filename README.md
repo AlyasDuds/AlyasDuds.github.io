@@ -1,6 +1,6 @@
 # Dann Mykell Martin — Portfolio
 
-Personal portfolio of **Dann Mykell Martin**, systems developer building web applications for legal records, company assets, and postal operations.
+Personal portfolio of **Dann Mykell Martin**, systems developer and IT support specialist, building web applications for legal records, company assets, and postal operations, and supporting hardware and software for users.
 
 **Live site:** [alyasduds.github.io](https://alyasduds.github.io/)
 
@@ -26,6 +26,8 @@ The Legal Case Management System is built with a dev team:
 - **Frontend:** Thymeleaf, Bootstrap 4, JavaScript, Chart.js, HTML/CSS, DataTables
 - **Database and DevOps:** PostgreSQL, MySQL, Apache POI, iText PDF, Git, Maven
 - **Other languages (basic):** PHP, C#, C++
+- **IT Support (Hardware):** PC and laptop assembly, hardware troubleshooting, component upgrades, printer and peripheral setup, LAN cabling, router and switch setup, preventive maintenance
+- **IT Support (Software):** Windows installation, software installation and troubleshooting, antivirus and malware removal, user account management, network configuration, backup and recovery, remote support
 
 ## Project structure
 
